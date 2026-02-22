@@ -1761,13 +1761,46 @@
             if (screenshotInput.files.length === 0) {
                 alert("⚠️ Please upload the screenshot of your payment to continue."); return; 
             }
-            alert("✅ Order Submitted Successfully!\n\nWe have received your payment screenshot. We will verify the payment and ship your items shortly.");
-            cart = [];
-            redrawEntireUI(); 
-            document.getElementById('customer-name').value = '';
-            document.getElementById('customer-phone').value = '';
-            document.getElementById('customer-address').value = '';
-            paymentModal.style.display = 'none';
+
+            // 1. Gather all the customer and order details
+            const orderData = {
+                name: document.getElementById('customer-name').value,
+                phone: document.getElementById('customer-phone').value,
+                address: document.getElementById('customer-address').value,
+                cart: cart, // This contains the names, prices, and quantities
+                delivery_type: deliveryFee > 0 ? "Delivery" : "Takeaway",
+                total_amount: cartTotal + deliveryFee
+            };
+
+            // 2. Send the data to the Python Backend using Fetch API
+            fetch('http://127.0.0.1:8000/api/save_order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(orderData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    alert("✅ Order Submitted Successfully!\n\nWe have received your payment screenshot and your order details have been saved.");
+                    
+                    // Clear the cart and UI only after successful save
+                    cart = [];
+                    redrawEntireUI(); 
+                    document.getElementById('customer-name').value = '';
+                    document.getElementById('customer-phone').value = '';
+                    document.getElementById('customer-address').value = '';
+                    screenshotInput.value = '';
+                    paymentModal.style.display = 'none';
+                } else {
+                    alert("❌ Database Error: Could not save your order.");
+                }
+            })
+            .catch(error => {
+                console.error('Error connecting to backend:', error);
+                alert("❌ Connection Error: Ensure the Python server is running.");
+            });
         });
 
         document.getElementById('search-bar').addEventListener('keyup', (e) => { 
