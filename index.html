@@ -58,7 +58,7 @@
     
     /* ADD YOUR IMAGE HERE */
     /* Ensure the image file is in the same folder and replace 'store-bg.jpg' */
-    background: url('store_im.jpg') center center / cover no-repeat;
+    background: url('store-bg.jpg') center center / cover no-repeat;
     border-bottom: 1px solid #eee;
 }
 
@@ -272,20 +272,33 @@
     </div>
     
     <div class="filter-container">
-        <button class="filter-btn active" data-filter="all">All Items</button>
-        <button class="filter-btn" data-filter="glassware" id="glass-main-btn">🥃 Glassware</button>
-        <button class="filter-btn" data-filter="steel">🥘 Steel Utensils</button>
-    </div>
+    <button class="filter-btn active" data-filter="all">All Items</button>
+    <button class="filter-btn" data-filter="glassware">🥃 Glassware</button>
+    <button class="filter-btn" data-filter="premium">✨ Premium</button>
+</div>
 
-    <div class="filter-container" id="glassware-sub-filters">
-        <button class="filter-btn" data-subfilter="short">Short Glass</button>
-        <button class="filter-btn" data-subfilter="juice">Juice Glass</button>
-        <button class="filter-btn" data-subfilter="whiskey">Whiskey Glass</button>
-        <button class="filter-btn" data-subfilter="wine">Wine Glass</button>
-        <button class="filter-btn" data-subfilter="water">Water Glass</button>
-        <button class="filter-btn" data-subfilter="borosilicate">Borosilicate Range</button>
-    </div>
+<div class="filter-container" id="glassware-sub-filters" style="display: none; margin-bottom: 40px; background: rgba(240, 242, 245, 0.5); padding: 15px; border-radius: 20px;">
+    <button class="filter-btn" data-subfilter="short">Short Glass</button>
+    <button class="filter-btn" data-subfilter="juice">Juice Glass</button>
+    <button class="filter-btn" data-subfilter="Whiskey">Whiskey Glass</button>
+    <button class="filter-btn" data-subfilter="water">Water Glass</button>
+    <button class="filter-btn" data-subfilter="borosilicate">Borosilicate Range</button>
+    <button class="filter-btn" data-subfilter="ice-cream">Ice-cream & Bowl</button>
+    <button class="filter-btn" data-subfilter="handle-juice">Handle Juice Glass</button>
+    <button class="filter-btn" data-subfilter="lemon-set">Lemon Set</button>
+    <button class="filter-btn" data-subfilter="beermug">Beer Mug</button>
+    <button class="filter-btn" data-subfilter="goblet">Goblet</button>
+    <button class="filter-btn" data-subfilter="tea-cup">Tea Cup</button>
+    <button class="filter-btn" data-subfilter="storage">Storage Container</button>
+    <button class="filter-btn" data-subfilter="microwave-boro">Microwave Borosilicate</button>
+</div>
 
+<div class="filter-container" id="premium-sub-filters" style="display: none; margin-bottom: 40px; background: rgba(255, 235, 205, 0.5); padding: 15px; border-radius: 20px;">
+    <button class="filter-btn" data-subfilter="premium-glasses">Glasses</button>
+    <button class="filter-btn" data-subfilter="bonechina">Bonechina</button>
+    <button class="filter-btn" data-subfilter="steel-utensils">Steel Utensils</button>
+</div>
+    
     <div class="product-grid" id="product-grid">
         
         <div class="product-card" data-category="short">
@@ -588,6 +601,489 @@
             </div>
         </div>
         
+        <div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="trix whiskey.png" alt="Trix Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title">Trix Whiskey Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹390</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="istanbul whiskey.png" alt="Istanbul Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Istanbul Whiskey Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹335</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="bangkok whiskey.png" alt="Bangkok Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Bangkok Whiskey Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹335</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="iris whiskey.png" alt="iris Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Iris Whiskey Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹350</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="iceland whiskey.png" alt="Iceland Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Iceland Whiskey Glass (Set of 6) (305mL)</h2>
+            <div class="price-container"><span class="selling-price">₹395</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="parague whiskey.png" alt="prague Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Prague Whiskey Glass (Set of 6) (350mL)</h2>
+            <div class="price-container"><span class="selling-price">₹350</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="mcallen whiskey.png" alt="mcallen Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Mcallen Whiskey Glass (Set of 6) (350mL)</h2>
+            <div class="price-container"><span class="selling-price">₹350</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="opara whiskey.png" alt="opara Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Opara Whiskey Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹335</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="cairo whiskey.png" alt="cairo Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Cairo Whiskey Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹335</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="morocco whiskey.png" alt="morocco Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Morocco Whiskey Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹335</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="tokyo whiskey.png" alt="tokyo Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Tokyo Whiskey Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹360</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="diamond whiskey.png" alt="diamond Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Diamond Whiskey Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹335</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="galaxy whiskey.png" alt="galaxy Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Galaxy Whiskey Glass (Set of 6) (345mL)</h2>
+            <div class="price-container"><span class="selling-price">₹395</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="radiance whiskey.png" alt="radiance Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Radiance Whiskey Glass (Set of 6) (315mL)</h2>
+            <div class="price-container"><span class="selling-price">₹465</span><span class="mrp-price">₹995</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="monarch whiskey.png" alt="monarch Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Monarch Whiskey Glass (Set of 6) (300mL)</h2>
+            <div class="price-container"><span class="selling-price">₹350</span><span class="mrp-price">₹695</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="mexico whiskey.png" alt="mexico Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Mexico Whiskey Glass (Set of 6) (385mL)</h2>
+            <div class="price-container"><span class="selling-price">₹435</span><span class="mrp-price">₹1045</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+<div 
+class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="lisbon whiskey.png" alt="lisbon Whiskey Glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Lisbon Whiskey Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹360</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+        <div
+ class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="dubai whiskey.png" alt="dubai whiskey glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Dubai whiskey Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹360</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+<div class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="melbourne whiskey.png" alt="melbourne whiskey glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Melbourne whiskey Glass (Set of 6) (350mL)</h2>
+            <div class="price-container"><span class="selling-price">₹350</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+<div class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="scirio whiskey.png" alt="scirio whiskey glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Scirio whiskey Glass (Set of 6) (310mL)</h2>
+            <div class="price-container"><span class="selling-price">₹375</span><span class="mrp-price">₹795</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+<div class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="romania whiskey.png" alt="romania whiskey glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Romania whiskey Glass (Set of 6) (350mL)</h2>
+            <div class="price-container"><span class="selling-price">₹350</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+<div class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="nova whiskey.png" alt="nova whiskey glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Nova Rock Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹350</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+<div class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="cosmo whiskey.png" alt="cosmo whiskey glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Cosmo Rock Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹350</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+<div class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="radisson whiskey.png" alt="radisson whiskey glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Radisson Rock Glass (Set of 6) (380mL)</h2>
+            <div class="price-container"><span class="selling-price">₹350</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+<div class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="dutch whiskey.png" alt="dutch whiskey glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Dutch Rock Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹350</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+<div class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="oasis whiskey.png" alt="oasis whiskey glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Oasis Whiskey Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹335</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+<div class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="aria whiskey.png" alt="aria whiskey glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Aria Whiskey Glass (Set of 6) (330mL)</h2>
+            <div class="price-container"><span class="selling-price">₹335</span><span class="mrp-price">₹845</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+<div class="product-card" data-category="Whiskey">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="orbit whiskey.png" alt="orbit whiskey glass" class="product-image">
+            </div>
+            <h2 class="product-title"> Orbit Whiskey Glass (Set of 6) (290mL)</h2>
+            <div class="price-container"><span class="selling-price">₹275</span><span class="mrp-price">₹695</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+      
+      
     </div>
 
     <div class="cart-sidebar" id="cart-sidebar">
@@ -628,7 +1124,7 @@
             <div class="qr-section" id="qr-section">
                 <h3 style="margin-top: 0; color: #e44d26;">Total to Pay: <span id="final-bill-amount">₹0</span></h3>
                 <p style="font-size: 0.9em; color: #555;">Scan to pay securely via any UPI App</p>
-                <img src="Qr_scanner.jpg" alt="Store QR Code" class="qr-image">
+                <img src="my-qr.jpg" alt="Store QR Code" class="qr-image">
                 <a href="#" id="upi-link" class="upi-direct-btn">📲 Pay Directly via Mobile App</a>
                 <div class="upload-section">
                     <label for="payment-screenshot">📸 Upload Payment Screenshot:</label>
@@ -762,7 +1258,6 @@
             const name = document.getElementById('customer-name').value;
             const phone = document.getElementById('customer-phone').value;
             const address = document.getElementById('customer-address').value;
-            const myUPI_ID = "alankritadube@okicici";
             if (name === "" || phone === "" || address === "") { alert("Please fill in all your delivery details."); return; }
             detailsSection.style.display = 'none';
             qrSection.style.display = 'block';
@@ -785,59 +1280,76 @@
         });
 
         document.getElementById('search-bar').addEventListener('keyup', (e) => { 
-            const searchString = e.target.value.toLowerCase(); 
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active')); 
-            document.querySelector('[data-filter="all"]').classList.add('active'); 
-            document.getElementById('glassware-sub-filters').style.display = 'none';
+    const searchString = e.target.value.toLowerCase(); 
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active')); 
+    document.querySelector('[data-filter="all"]').classList.add('active'); 
+    
+    // Hide both sub-menus when searching
+    document.getElementById('glassware-sub-filters').style.display = 'none';
+    document.getElementById('premium-sub-filters').style.display = 'none';
+    
+    document.querySelectorAll('.product-card').forEach(card => { 
+        card.style.display = card.querySelector('.product-title').innerText.toLowerCase().includes(searchString) ? 'block' : 'none'; 
+    }); 
+});
+
+const mainFilterBtns = document.querySelectorAll('.filter-btn[data-filter]');
+const subFilterBtns = document.querySelectorAll('.filter-btn[data-subfilter]');
+const glassSubMenu = document.getElementById('glassware-sub-filters');
+const premiumSubMenu = document.getElementById('premium-sub-filters');
+const cards = document.querySelectorAll('.product-card');
+
+mainFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const filterValue = btn.getAttribute('data-filter');
+        
+        mainFilterBtns.forEach(b => b.classList.remove('active'));
+        subFilterBtns.forEach(sb => sb.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('search-bar').value = ''; 
+
+        if (filterValue === 'glassware') {
+            glassSubMenu.style.display = 'flex';
+            premiumSubMenu.style.display = 'none'; // FIX: Hide premium menu
             
-            document.querySelectorAll('.product-card').forEach(card => { 
-                card.style.display = card.querySelector('.product-title').innerText.toLowerCase().includes(searchString) ? 'block' : 'none'; 
-            }); 
-        });
-
-        const mainFilterBtns = document.querySelectorAll('.filter-btn[data-filter]');
-        const subFilterBtns = document.querySelectorAll('.filter-btn[data-subfilter]');
-        const glassSubMenu = document.getElementById('glassware-sub-filters');
-        const cards = document.querySelectorAll('.product-card');
-
-        mainFilterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const filterValue = btn.getAttribute('data-filter');
-                
-                mainFilterBtns.forEach(b => b.classList.remove('active'));
-                subFilterBtns.forEach(sb => sb.classList.remove('active'));
-                btn.classList.add('active');
-                document.getElementById('search-bar').value = ''; 
-
-                if (filterValue === 'glassware') {
-                    glassSubMenu.style.display = 'flex';
-                    cards.forEach(card => {
-                        const cat = card.getAttribute('data-category');
-                        const isGlass = ['short', 'juice', 'whiskey', 'wine', 'water', 'borosilicate'].includes(cat);
-                        card.style.display = isGlass ? 'block' : 'none';
-                    });
-                } else {
-                    glassSubMenu.style.display = 'none';
-                    cards.forEach(card => {
-                        const cat = card.getAttribute('data-category');
-                        card.style.display = (filterValue === 'all' || cat === filterValue) ? 'block' : 'none';
-                    });
-                }
+            cards.forEach(card => {
+                const cat = card.getAttribute('data-category');
+                const isGlass = ['short', 'juice', 'Whiskey', 'water', 'borosilicate', 'ice-cream', 'handle-juice', 'lemon-set', 'beermug', 'goblet', 'tea-cup', 'storage', 'microwave-boro'].includes(cat);
+                card.style.display = isGlass ? 'block' : 'none';
             });
-        });
-
-        subFilterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const subValue = btn.getAttribute('data-subfilter');
-                subFilterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                cards.forEach(card => {
-                    card.style.display = (card.getAttribute('data-category') === subValue) ? 'block' : 'none';
-                });
+        } 
+        else if (filterValue === 'premium') {
+            premiumSubMenu.style.display = 'flex';
+            glassSubMenu.style.display = 'none'; // FIX: Hide glassware menu
+            
+            cards.forEach(card => {
+                const cat = card.getAttribute('data-category');
+                // Standardized names for the premium category
+                const isPremium = ['premium-glasses', 'bonechina', 'steel-utensils'].includes(cat);
+                card.style.display = isPremium ? 'block' : 'none';
             });
-        });
+        } 
+        else { // "All Items" is clicked
+            glassSubMenu.style.display = 'none';
+            premiumSubMenu.style.display = 'none';
+            cards.forEach(card => {
+                card.style.display = 'block'; // Show everything
+            });
+        }
+    });
+});
 
+subFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const subValue = btn.getAttribute('data-subfilter');
+        subFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        cards.forEach(card => {
+            card.style.display = (card.getAttribute('data-category') === subValue) ? 'block' : 'none';
+        });
+    });
+});
         const imageLightbox = document.getElementById('image-lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
 
