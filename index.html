@@ -46,75 +46,55 @@
         .cart-status:hover { border-color: #e44d26; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(228, 77, 38, 0.15); }
         .cart-badge { background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%); color: white; padding: 4px 12px; border-radius: 50%; margin-left: 8px; font-weight: 700; box-shadow: 0 2px 5px rgba(255,65,108,0.4); }
 
-        /* --- HERO SECTION WITH STORE BACKGROUND & ANIMATED ORBS --- */
         /* --- HERO SECTION WITH CLEAR STORE BACKGROUND --- */
-.hero-section { 
-    position: relative; 
-    text-align: center; 
-    /* Increased padding makes the section taller so you see more of the photo */
-    padding: 140px 20px; 
-    overflow: hidden; 
-    z-index: 1; 
-    
-    /* ADD YOUR IMAGE HERE */
-    /* Ensure the image file is in the same folder and replace 'store-bg.jpg' */
-    background: url('store_im.jpg') center center / cover no-repeat;
-    border-bottom: 1px solid #eee;
-}
-
-/* --- FROSTED GLASS TEXT BOX --- */
-.hero-content { 
-    position: relative; 
-    z-index: 2; 
-    display: inline-block; /* Makes the box wrap around the text */
-    
-    /* Glass Effect Magic */
-    background: rgba(255, 255, 255, 0.85); /* White with 85% opacity */
-    backdrop-filter: blur(12px); /* Blurs the photo directly behind the text */
-    -webkit-backdrop-filter: blur(12px);
-    
-    /* Box Styling */
-    padding: 40px 60px; 
-    border-radius: 25px; 
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); 
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    max-width: 750px;
-    margin: 0 auto; /* Centers the box horizontally */
-}
-
-/* Text styles inside the new box */
-.hero-section h2 { 
-    font-size: 3.5em; 
-    margin: 0 0 10px; 
-    color: #111; 
-    font-weight: 800; 
-    letter-spacing: -1px; 
-}
-
-.hero-section p { 
-    color: #333; 
-    font-size: 1.25em; 
-    margin: 0; 
-    line-height: 1.6; 
-    font-weight: 500;
-}
-
-/* Responsive adjustments for mobile phones */
-@media (max-width: 600px) {
-    .hero-section { padding: 80px 15px; }
-    .hero-content { padding: 25px 20px; border-radius: 15px; }
-    .hero-section h2 { font-size: 2.2em; }
-    .hero-section p { font-size: 1.05em; }
-}
-        @keyframes float {
-            0% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(30px, 40px) scale(1.05); }
-            100% { transform: translate(-20px, 20px) scale(0.95); }
+        .hero-section { 
+            position: relative; 
+            text-align: center; 
+            padding: 140px 20px; 
+            overflow: hidden; 
+            z-index: 1; 
+            background: url('store_im.jpg') center center / cover no-repeat;
+            border-bottom: 1px solid #eee;
         }
 
-        .hero-content { position: relative; z-index: 2; }
-        .hero-section h2 { font-size: 3.2em; margin: 0 0 15px; color: #111; font-weight: 800; letter-spacing: -1px; }
-        .hero-section p { color: #444; font-size: 1.2em; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6; font-weight: 500;}
+        /* --- FROSTED GLASS TEXT BOX --- */
+        .hero-content { 
+            position: relative; 
+            z-index: 2; 
+            display: inline-block; 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px);
+            padding: 40px 60px; 
+            border-radius: 25px; 
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); 
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            max-width: 750px;
+            margin: 0 auto; 
+        }
+
+        .hero-section h2 { 
+            font-size: 3.5em; 
+            margin: 0 0 10px; 
+            color: #111; 
+            font-weight: 800; 
+            letter-spacing: -1px; 
+        }
+
+        .hero-section p { 
+            color: #333; 
+            font-size: 1.25em; 
+            margin: 0; 
+            line-height: 1.6; 
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            .hero-section { padding: 80px 15px; }
+            .hero-content { padding: 25px 20px; border-radius: 15px; }
+            .hero-section h2 { font-size: 2.2em; }
+            .hero-section p { font-size: 1.05em; }
+        }
 
         /* --- SEARCH & FILTERS --- */
         .search-container { display: flex; justify-content: center; margin-bottom: 25px; padding: 0 20px; position: relative; z-index: 2;}
@@ -196,6 +176,19 @@
         .sidebar-qty-controls .qty-btn { background-color: white; border: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-weight: bold; display: flex; justify-content: center; align-items: center; color: #1e3c72; }
         .sidebar-qty-controls .qty-btn:hover { background: #1e3c72; color: white;}
         
+        /* --- DELIVERY TOGGLE STYLES --- */
+        .delivery-toggle { display: flex; gap: 10px; margin-bottom: 15px; }
+        .delivery-toggle input[type="radio"] { display: none; }
+        .delivery-toggle label {
+            flex: 1; text-align: center; background: #f0f2f5; padding: 12px 10px; 
+            border-radius: 12px; cursor: pointer; font-size: 0.95em; font-weight: 600; 
+            color: #555; transition: 0.3s; border: 2px solid transparent;
+        }
+        .delivery-toggle input[type="radio"]:checked + label {
+            background: #e8f0fe; border-color: #1e3c72; color: #1e3c72;
+        }
+        .fee-row { display: flex; justify-content: space-between; font-size: 1.05em; color: #666; margin-bottom: 10px; display: none; }
+
         .cart-footer { padding: 25px; background-color: white; border-top: 1px solid #eee; text-align: right; box-shadow: 0 -5px 15px rgba(0,0,0,0.03); }
         .cart-total { font-size: 1.3em; color: #666; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;}
         .cart-total span { font-size: 1.3em; font-weight: 700; color: #1e3c72;}
@@ -244,8 +237,6 @@
             .store-header { padding: 15px 20px; }
             .logo-img { max-height: 35px; }
             .cart-sidebar { width: 100%; right: -100%; }
-            .hero-section { padding: 60px 15px 40px; }
-            .hero-section h2 { font-size: 2.2em; }
         }
     </style>
 </head>
@@ -272,32 +263,32 @@
     </div>
     
     <div class="filter-container">
-    <button class="filter-btn active" data-filter="all">All Items</button>
-    <button class="filter-btn" data-filter="glassware">🥃 Glassware</button>
-    <button class="filter-btn" data-filter="premium">✨ Premium</button>
-</div>
+        <button class="filter-btn active" data-filter="all">All Items</button>
+        <button class="filter-btn" data-filter="glassware" id="glass-main-btn">🥃 Glassware</button>
+        <button class="filter-btn" data-filter="premium">✨ Premium</button>
+    </div>
 
-<div class="filter-container" id="glassware-sub-filters" style="display: none; margin-bottom: 40px; background: rgba(240, 242, 245, 0.5); padding: 15px; border-radius: 20px;">
-    <button class="filter-btn" data-subfilter="short">Short Glass</button>
-    <button class="filter-btn" data-subfilter="juice">Juice Glass</button>
-    <button class="filter-btn" data-subfilter="Whiskey">Whiskey Glass</button>
-    <button class="filter-btn" data-subfilter="water">Water Glass</button>
-    <button class="filter-btn" data-subfilter="borosilicate">Borosilicate Range</button>
-    <button class="filter-btn" data-subfilter="ice-cream">Ice-cream & Bowl</button>
-    <button class="filter-btn" data-subfilter="handle-juice">Handle Juice Glass</button>
-    <button class="filter-btn" data-subfilter="lemon-set">Lemon Set</button>
-    <button class="filter-btn" data-subfilter="beermug">Beer Mug</button>
-    <button class="filter-btn" data-subfilter="goblet">Goblet</button>
-    <button class="filter-btn" data-subfilter="tea-cup">Tea Cup</button>
-    <button class="filter-btn" data-subfilter="storage">Storage Container</button>
-    <button class="filter-btn" data-subfilter="microwave-boro">Microwave Borosilicate</button>
-</div>
+    <div class="filter-container" id="glassware-sub-filters" style="display: none; margin-bottom: 40px; background: rgba(240, 242, 245, 0.5); padding: 15px; border-radius: 20px;">
+        <button class="filter-btn" data-subfilter="short">Short Glass</button>
+        <button class="filter-btn" data-subfilter="juice">Juice Glass</button>
+        <button class="filter-btn" data-subfilter="Whiskey">Whiskey Glass</button>
+        <button class="filter-btn" data-subfilter="water">Water Glass</button>
+        <button class="filter-btn" data-subfilter="borosilicate">Borosilicate Range</button>
+        <button class="filter-btn" data-subfilter="ice-cream">Ice-cream & Bowl</button>
+        <button class="filter-btn" data-subfilter="handle-juice">Handle Juice Glass</button>
+        <button class="filter-btn" data-subfilter="lemon-set">Lemon Set</button>
+        <button class="filter-btn" data-subfilter="beermug">Beer Mug</button>
+        <button class="filter-btn" data-subfilter="goblet">Goblet</button>
+        <button class="filter-btn" data-subfilter="tea-cup">Tea Cup</button>
+        <button class="filter-btn" data-subfilter="storage">Storage Container</button>
+        <button class="filter-btn" data-subfilter="microwave-boro">Microwave Borosilicate</button>
+    </div>
 
-<div class="filter-container" id="premium-sub-filters" style="display: none; margin-bottom: 40px; background: rgba(255, 235, 205, 0.5); padding: 15px; border-radius: 20px;">
-    <button class="filter-btn" data-subfilter="premium-glasses">Glasses</button>
-    <button class="filter-btn" data-subfilter="bonechina">Bonechina</button>
-    <button class="filter-btn" data-subfilter="steel-utensils">Steel Utensils</button>
-</div>
+    <div class="filter-container" id="premium-sub-filters" style="display: none; margin-bottom: 40px; background: rgba(255, 235, 205, 0.5); padding: 15px; border-radius: 20px;">
+        <button class="filter-btn" data-subfilter="premium-glasses">Glasses</button>
+        <button class="filter-btn" data-subfilter="bonechina">Bonechina</button>
+        <button class="filter-btn" data-subfilter="steel-utensils">Steel Utensils</button>
+    </div>
     
     <div class="product-grid" id="product-grid">
         
@@ -601,8 +592,7 @@
             </div>
         </div>
         
-        <div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="trix whiskey.png" alt="Trix Whiskey Glass" class="product-image">
@@ -617,11 +607,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="istanbul whiskey.png" alt="Istanbul Whiskey Glass" class="product-image">
@@ -636,10 +622,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="bangkok whiskey.png" alt="Bangkok Whiskey Glass" class="product-image">
@@ -654,11 +637,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="iris whiskey.png" alt="iris Whiskey Glass" class="product-image">
@@ -673,11 +652,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="iceland whiskey.png" alt="Iceland Whiskey Glass" class="product-image">
@@ -692,12 +667,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="parague whiskey.png" alt="prague Whiskey Glass" class="product-image">
@@ -712,8 +682,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="mcallen whiskey.png" alt="mcallen Whiskey Glass" class="product-image">
@@ -728,12 +697,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="opara whiskey.png" alt="opara Whiskey Glass" class="product-image">
@@ -748,8 +712,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="cairo whiskey.png" alt="cairo Whiskey Glass" class="product-image">
@@ -764,9 +727,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="morocco whiskey.png" alt="morocco Whiskey Glass" class="product-image">
@@ -781,9 +742,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="tokyo whiskey.png" alt="tokyo Whiskey Glass" class="product-image">
@@ -798,10 +757,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="diamond whiskey.png" alt="diamond Whiskey Glass" class="product-image">
@@ -816,10 +772,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="galaxy whiskey.png" alt="galaxy Whiskey Glass" class="product-image">
@@ -834,9 +787,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="radiance whiskey.png" alt="radiance Whiskey Glass" class="product-image">
@@ -851,9 +802,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="monarch whiskey.png" alt="monarch Whiskey Glass" class="product-image">
@@ -868,10 +817,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="mexico whiskey.png" alt="mexico Whiskey Glass" class="product-image">
@@ -886,9 +832,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-<div 
-class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="lisbon whiskey.png" alt="lisbon Whiskey Glass" class="product-image">
@@ -902,8 +846,8 @@ class="product-card" data-category="Whiskey">
                 </div>
             </div>
         </div>
-        <div
- class="product-card" data-category="Whiskey">
+        
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="dubai whiskey.png" alt="dubai whiskey glass" class="product-image">
@@ -918,7 +862,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-<div class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="melbourne whiskey.png" alt="melbourne whiskey glass" class="product-image">
@@ -933,8 +877,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-<div class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="scirio whiskey.png" alt="scirio whiskey glass" class="product-image">
@@ -949,10 +892,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="romania whiskey.png" alt="romania whiskey glass" class="product-image">
@@ -967,7 +907,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-<div class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="nova whiskey.png" alt="nova whiskey glass" class="product-image">
@@ -982,7 +922,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-<div class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="cosmo whiskey.png" alt="cosmo whiskey glass" class="product-image">
@@ -997,9 +937,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-<div class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="radisson whiskey.png" alt="radisson whiskey glass" class="product-image">
@@ -1014,9 +952,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-<div class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="dutch whiskey.png" alt="dutch whiskey glass" class="product-image">
@@ -1031,10 +967,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="oasis whiskey.png" alt="oasis whiskey glass" class="product-image">
@@ -1049,8 +982,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-<div class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="aria whiskey.png" alt="aria whiskey glass" class="product-image">
@@ -1065,10 +997,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div class="product-card" data-category="Whiskey">
+        <div class="product-card" data-category="Whiskey">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="orbit whiskey.png" alt="orbit whiskey glass" class="product-image">
@@ -1082,17 +1011,16 @@ class="product-card" data-category="Whiskey">
                 </div>
             </div>
         </div>
-      <div class="product-card" data-category="water">
+
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="mexico water.png" alt="mexico water Glass 280mL" class="product-image">
             </div>
-            
             <h2 class="product-title">
                 Mexico Water Glass (Set of 6)<br>
                 <span style="color: #e44d26; font-size: 0.85em; font-weight: 800; background: #ffe8e3; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-top: 5px;">Size: 280mL</span>
             </h2>
-            
             <div class="price-container">
                 <span class="selling-price">₹295</span>
                 <span class="mrp-price">₹645</span>
@@ -1112,12 +1040,10 @@ class="product-card" data-category="Whiskey">
                 <span class="sale-badge">50% OFF</span>
                 <img src="mexico water.png" alt="mexico water Glass 350mL" class="product-image">
             </div>
-            
             <h2 class="product-title">
                 Mexico Water Glass (Set of 6)<br>
                 <span style="color: #1e3c72; font-size: 0.85em; font-weight: 800; background: #e8f0fe; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-top: 5px;">Size: 350mL</span>
             </h2>
-            
             <div class="price-container">
                 <span class="selling-price">₹410</span>
                 <span class="mrp-price">₹995</span>
@@ -1132,8 +1058,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
         
-         <div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="bangkok water.png" alt="bangkok water glass" class="product-image">
@@ -1148,9 +1073,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="istanbul water.png" alt="istanbul water glass" class="product-image">
@@ -1165,10 +1088,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="radiance water.png" alt="radiance water glass" class="product-image">
@@ -1183,10 +1103,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="scirio water.png" alt="scirio water glass" class="product-image">
@@ -1201,10 +1118,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="iceland water.png" alt="iceland water glass" class="product-image">
@@ -1219,10 +1133,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="romania water.png" alt="romania water glass" class="product-image">
@@ -1236,9 +1147,8 @@ class="product-card" data-category="Whiskey">
                 </div>
             </div>
         </div>
-      
-      <div
- class="product-card" data-category="water">
+        
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="galaxy water.png" alt="galaxy water glass" class="product-image">
@@ -1253,10 +1163,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="dubai water.png" alt="dubai water glass" class="product-image">
@@ -1271,11 +1178,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="diamond water.png" alt="diamond water glass" class="product-image">
@@ -1290,11 +1193,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="paris water.png" alt="paris water glass" class="product-image">
@@ -1309,11 +1208,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="tokyo water.png" alt="tokyo water glass" class="product-image">
@@ -1328,11 +1223,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="oslo water.png" alt="oslo water glass" class="product-image">
@@ -1347,11 +1238,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="lisbon water.png" alt="lisbon water glass" class="product-image">
@@ -1366,11 +1253,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="monarch water.png" alt="monarch water glass" class="product-image">
@@ -1385,11 +1268,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="florence water.png" alt="florence water glass" class="product-image">
@@ -1404,11 +1283,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="morocco water.png" alt="morocco water glass" class="product-image">
@@ -1423,11 +1298,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="baku water.png" alt="baku water glass" class="product-image">
@@ -1442,12 +1313,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="opara water.png" alt="opara water glass" class="product-image">
@@ -1462,10 +1328,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="cairo water.png" alt="cairo water glass" class="product-image">
@@ -1480,12 +1343,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="trix water.png" alt="trix water glass" class="product-image">
@@ -1500,10 +1358,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="hi ball diamond water.png" alt="hi ball diamond water glass" class="product-image">
@@ -1518,11 +1373,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="hi ball dubai water.png" alt="hi ball dubai water glass" class="product-image">
@@ -1537,11 +1388,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="gems water.png" alt="gems water glass" class="product-image">
@@ -1556,11 +1403,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="oasis water.png" alt="oasis water glass" class="product-image">
@@ -1575,12 +1418,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="aria water.png" alt="aria water glass" class="product-image">
@@ -1595,12 +1433,7 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-
-<div
- class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="dubai water.png" alt="dubai water glass" class="product-image">
@@ -1614,19 +1447,16 @@ class="product-card" data-category="Whiskey">
                 </div>
             </div>
         </div>
-
         
-<div class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="melbourne water.png" alt="melbourne water Glass " class="product-image">
             </div>
-            
             <h2 class="product-title">
-                Melbourne Water Glass (Set of 6)(300mL)<br>
+                Melbourne Water Glass (Set of 6)<br>
                 <span style="color: #e44d26; font-size: 0.85em; font-weight: 800; background: #ffe8e3; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-top: 5px;">Size: 300mL</span>
             </h2>
-            
             <div class="price-container">
                 <span class="selling-price">₹330</span>
                 <span class="mrp-price">₹695</span>
@@ -1646,12 +1476,10 @@ class="product-card" data-category="Whiskey">
                 <span class="sale-badge">50% OFF</span>
                 <img src="melbourne water.png" alt="melbourne water Glass " class="product-image">
             </div>
-            
             <h2 class="product-title">
-                Melbourne Water Glass (Set of 6) (420mL)<br>
+                Melbourne Water Glass (Set of 6)<br>
                 <span style="color: #e44d26; font-size: 0.85em; font-weight: 800; background: #ffe8e3; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-top: 5px;">Size: 420mL</span>
             </h2>
-            
             <div class="price-container">
                 <span class="selling-price">₹380</span>
                 <span class="mrp-price">₹795</span>
@@ -1666,17 +1494,15 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-<div class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="pisa water.png" alt="pisa water Glass " class="product-image">
             </div>
-            
             <h2 class="product-title">
                 Pisa Water Glass (Set of 6)<br>
                 <span style="color: #e44d26; font-size: 0.85em; font-weight: 800; background: #ffe8e3; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-top: 5px;">Size: 300mL</span>
             </h2>
-            
             <div class="price-container">
                 <span class="selling-price">₹275</span>
                 <span class="mrp-price">₹695</span>
@@ -1691,20 +1517,15 @@ class="product-card" data-category="Whiskey">
             </div>
         </div>
 
-
-
-
-<div class="product-card" data-category="water">
+        <div class="product-card" data-category="water">
             <div class="img-wrapper">
                 <span class="sale-badge">50% OFF</span>
                 <img src="pisa water.png" alt="pisa water Glass " class="product-image">
             </div>
-            
             <h2 class="product-title">
                 Pisa Water Glass (Set of 6)<br>
                 <span style="color: #e44d26; font-size: 0.85em; font-weight: 800; background: #ffe8e3; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-top: 5px;">Size: 370mL</span>
             </h2>
-            
             <div class="price-container">
                 <span class="selling-price">₹275</span>
                 <span class="mrp-price">₹695</span>
@@ -1729,7 +1550,21 @@ class="product-card" data-category="Whiskey">
         <div class="cart-items-container" id="cart-items-container">
             <p style="text-align: center; color: #888; margin-top: 50px;">Your cart is empty.</p>
         </div>
+        
         <div class="cart-footer">
+            <div class="delivery-toggle">
+                <input type="radio" id="takeaway" name="delivery-type" value="0" checked>
+                <label for="takeaway">🚶 Takeaway</label>
+                
+                <input type="radio" id="delivery" name="delivery-type" value="40">
+                <label for="delivery">🚚 Delivery (+₹40)</label>
+            </div>
+            
+            <div class="fee-row" id="delivery-fee-row">
+                <span>Delivery Fee:</span>
+                <span>+₹40</span>
+            </div>
+
             <div class="cart-total">Total: <span id="cart-total-price">₹0</span></div>
             <button class="checkout-btn" id="checkout-btn">Proceed to Checkout ➔</button>
         </div>
@@ -1777,7 +1612,8 @@ class="product-card" data-category="Whiskey">
     <script>
         let cart = []; 
         let cartTotal = 0; 
-        const myUPI_ID = "yourname@bankname"; 
+        let deliveryFee = 0; // NEW: Track delivery fee
+        const myUPI_ID = "alankritadube@okicici"; 
 
         const cartBadge = document.getElementById('cart-count');
         const cartSidebar = document.getElementById('cart-sidebar');
@@ -1796,6 +1632,18 @@ class="product-card" data-category="Whiskey">
         const finalBillAmount = document.getElementById('final-bill-amount');
         const upiLink = document.getElementById('upi-link');
         const screenshotInput = document.getElementById('payment-screenshot');
+        
+        const deliveryRadios = document.querySelectorAll('input[name="delivery-type"]');
+        const deliveryFeeRow = document.getElementById('delivery-fee-row');
+
+        // NEW: Delivery Toggle Listener
+        deliveryRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                deliveryFee = parseInt(e.target.value);
+                deliveryFeeRow.style.display = (deliveryFee > 0) ? 'flex' : 'none';
+                redrawEntireUI(); 
+            });
+        });
 
         openCartBtn.addEventListener('click', () => cartSidebar.classList.add('open'));
         closeCartBtn.addEventListener('click', () => cartSidebar.classList.remove('open'));
@@ -1842,8 +1690,10 @@ class="product-card" data-category="Whiskey">
                 });
             }
             
+            // NEW: Add delivery fee to total if cart isn't empty
+            let finalTotal = cart.length > 0 ? cartTotal + deliveryFee : 0;
             cartBadge.innerText = totalItemsInCart; 
-            cartTotalPrice.innerText = `₹${cartTotal}`;
+            cartTotalPrice.innerText = `₹${finalTotal}`;
 
             document.querySelectorAll('.product-card').forEach(card => {
                 const title = card.querySelector('.product-title').innerText;
@@ -1893,12 +1743,17 @@ class="product-card" data-category="Whiskey">
             const name = document.getElementById('customer-name').value;
             const phone = document.getElementById('customer-phone').value;
             const address = document.getElementById('customer-address').value;
-            const myUPI_ID = "alankritadube@okicici";
+            
             if (name === "" || phone === "" || address === "") { alert("Please fill in all your delivery details."); return; }
             detailsSection.style.display = 'none';
             qrSection.style.display = 'block';
-            finalBillAmount.innerText = `₹${cartTotal}`;
-            const upiURL = `upi://pay?pa=${myUPI_ID}&pn=Kitchenware+Store&am=${cartTotal}&cu=INR`;
+            
+            // NEW: Calculate UPI final total with delivery fee
+            let finalTotalToPay = cartTotal + deliveryFee;
+            finalBillAmount.innerText = `₹${finalTotalToPay}`;
+            
+            const storeName = encodeURIComponent("Brand Magic");
+            const upiURL = `upi://pay?pa=${myUPI_ID}&pn=${storeName}&am=${finalTotalToPay}&cu=INR`;
             upiLink.setAttribute("href", upiURL);
         });
 
@@ -1916,76 +1771,75 @@ class="product-card" data-category="Whiskey">
         });
 
         document.getElementById('search-bar').addEventListener('keyup', (e) => { 
-    const searchString = e.target.value.toLowerCase(); 
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active')); 
-    document.querySelector('[data-filter="all"]').classList.add('active'); 
-    
-    // Hide both sub-menus when searching
-    document.getElementById('glassware-sub-filters').style.display = 'none';
-    document.getElementById('premium-sub-filters').style.display = 'none';
-    
-    document.querySelectorAll('.product-card').forEach(card => { 
-        card.style.display = card.querySelector('.product-title').innerText.toLowerCase().includes(searchString) ? 'block' : 'none'; 
-    }); 
-});
-
-const mainFilterBtns = document.querySelectorAll('.filter-btn[data-filter]');
-const subFilterBtns = document.querySelectorAll('.filter-btn[data-subfilter]');
-const glassSubMenu = document.getElementById('glassware-sub-filters');
-const premiumSubMenu = document.getElementById('premium-sub-filters');
-const cards = document.querySelectorAll('.product-card');
-
-mainFilterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const filterValue = btn.getAttribute('data-filter');
-        
-        mainFilterBtns.forEach(b => b.classList.remove('active'));
-        subFilterBtns.forEach(sb => sb.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById('search-bar').value = ''; 
-
-        if (filterValue === 'glassware') {
-            glassSubMenu.style.display = 'flex';
-            premiumSubMenu.style.display = 'none'; // FIX: Hide premium menu
+            const searchString = e.target.value.toLowerCase(); 
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active')); 
+            document.querySelector('[data-filter="all"]').classList.add('active'); 
             
-            cards.forEach(card => {
-                const cat = card.getAttribute('data-category');
-                const isGlass = ['short', 'juice', 'Whiskey', 'water', 'borosilicate', 'ice-cream', 'handle-juice', 'lemon-set', 'beermug', 'goblet', 'tea-cup', 'storage', 'microwave-boro'].includes(cat);
-                card.style.display = isGlass ? 'block' : 'none';
-            });
-        } 
-        else if (filterValue === 'premium') {
-            premiumSubMenu.style.display = 'flex';
-            glassSubMenu.style.display = 'none'; // FIX: Hide glassware menu
+            document.getElementById('glassware-sub-filters').style.display = 'none';
+            document.getElementById('premium-sub-filters').style.display = 'none';
             
-            cards.forEach(card => {
-                const cat = card.getAttribute('data-category');
-                // Standardized names for the premium category
-                const isPremium = ['premium-glasses', 'bonechina', 'steel-utensils'].includes(cat);
-                card.style.display = isPremium ? 'block' : 'none';
-            });
-        } 
-        else { // "All Items" is clicked
-            glassSubMenu.style.display = 'none';
-            premiumSubMenu.style.display = 'none';
-            cards.forEach(card => {
-                card.style.display = 'block'; // Show everything
-            });
-        }
-    });
-});
-
-subFilterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const subValue = btn.getAttribute('data-subfilter');
-        subFilterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        cards.forEach(card => {
-            card.style.display = (card.getAttribute('data-category') === subValue) ? 'block' : 'none';
+            document.querySelectorAll('.product-card').forEach(card => { 
+                card.style.display = card.querySelector('.product-title').innerText.toLowerCase().includes(searchString) ? 'block' : 'none'; 
+            }); 
         });
-    });
-});
+
+        const mainFilterBtns = document.querySelectorAll('.filter-btn[data-filter]');
+        const subFilterBtns = document.querySelectorAll('.filter-btn[data-subfilter]');
+        const glassSubMenu = document.getElementById('glassware-sub-filters');
+        const premiumSubMenu = document.getElementById('premium-sub-filters');
+        const cards = document.querySelectorAll('.product-card');
+
+        mainFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filterValue = btn.getAttribute('data-filter');
+                
+                mainFilterBtns.forEach(b => b.classList.remove('active'));
+                subFilterBtns.forEach(sb => sb.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('search-bar').value = ''; 
+
+                if (filterValue === 'glassware') {
+                    glassSubMenu.style.display = 'flex';
+                    premiumSubMenu.style.display = 'none'; 
+                    
+                    cards.forEach(card => {
+                        const cat = card.getAttribute('data-category');
+                        const isGlass = ['short', 'juice', 'Whiskey', 'water', 'borosilicate', 'ice-cream', 'handle-juice', 'lemon-set', 'beermug', 'goblet', 'tea-cup', 'storage', 'microwave-boro'].includes(cat);
+                        card.style.display = isGlass ? 'block' : 'none';
+                    });
+                } 
+                else if (filterValue === 'premium') {
+                    premiumSubMenu.style.display = 'flex';
+                    glassSubMenu.style.display = 'none'; 
+                    
+                    cards.forEach(card => {
+                        const cat = card.getAttribute('data-category');
+                        const isPremium = ['premium-glasses', 'bonechina', 'steel-utensils'].includes(cat);
+                        card.style.display = isPremium ? 'block' : 'none';
+                    });
+                } 
+                else { 
+                    glassSubMenu.style.display = 'none';
+                    premiumSubMenu.style.display = 'none';
+                    cards.forEach(card => {
+                        card.style.display = 'block'; 
+                    });
+                }
+            });
+        });
+
+        subFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const subValue = btn.getAttribute('data-subfilter');
+                subFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                cards.forEach(card => {
+                    card.style.display = (card.getAttribute('data-category') === subValue) ? 'block' : 'none';
+                });
+            });
+        });
+
         const imageLightbox = document.getElementById('image-lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
 
