@@ -58,7 +58,7 @@
     
     /* ADD YOUR IMAGE HERE */
     /* Ensure the image file is in the same folder and replace 'store-bg.jpg' */
-    background: url('store-bg.jpg') center center / cover no-repeat;
+    background: url('store_im.jpg') center center / cover no-repeat;
     border-bottom: 1px solid #eee;
 }
 
@@ -1124,7 +1124,7 @@ class="product-card" data-category="Whiskey">
             <div class="qr-section" id="qr-section">
                 <h3 style="margin-top: 0; color: #e44d26;">Total to Pay: <span id="final-bill-amount">₹0</span></h3>
                 <p style="font-size: 0.9em; color: #555;">Scan to pay securely via any UPI App</p>
-                <img src="my-qr.jpg" alt="Store QR Code" class="qr-image">
+                <img src="Qr_scanner.jpg" alt="Store QR Code" class="qr-image">
                 <a href="#" id="upi-link" class="upi-direct-btn">📲 Pay Directly via Mobile App</a>
                 <div class="upload-section">
                     <label for="payment-screenshot">📸 Upload Payment Screenshot:</label>
@@ -1258,6 +1258,7 @@ class="product-card" data-category="Whiskey">
             const name = document.getElementById('customer-name').value;
             const phone = document.getElementById('customer-phone').value;
             const address = document.getElementById('customer-address').value;
+            const myUPI_ID = "alankritadube@okicici";
             if (name === "" || phone === "" || address === "") { alert("Please fill in all your delivery details."); return; }
             detailsSection.style.display = 'none';
             qrSection.style.display = 'block';
@@ -1373,3 +1374,4 @@ subFilterBtns.forEach(btn => {
     </script>
 </body>
 </html>
+
