@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Brand Magic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- GLOBAL & TYPOGRAPHY --- */
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #FAFAFA; 
+            margin: 0; 
+            padding: 0 0 50px 0; 
+            overflow-x: hidden; 
+            color: #333;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        .store-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: rgba(255, 255, 255, 0.7); 
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 15px 40px; 
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { max-height: 100px; width: auto; object-fit: contain; transition: transform 0.3s ease; }
+        .logo-img:hover { transform: scale(1.02); }
+        
+        .cart-status { 
+            font-size: 1.1em; font-weight: 600; cursor: pointer; 
+            background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(228, 77, 38, 0.15); 
+            color: #333; padding: 10px 20px; border-radius: 30px; 
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .cart-status:hover { border-color: #e44d26; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(228, 77, 38, 0.15); }
+        .cart-badge { background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%); color: white; padding: 4px 12px; border-radius: 50%; margin-left: 8px; font-weight: 700; box-shadow: 0 2px 5px rgba(255,65,108,0.4); }
+
+        /* --- HERO SECTION WITH STORE BACKGROUND & ANIMATED ORBS --- */
+        /* --- HERO SECTION WITH CLEAR STORE BACKGROUND --- */
+.hero-section { 
+    position: relative; 
+    text-align: center; 
+    /* Increased padding makes the section taller so you see more of the photo */
+    padding: 140px 20px; 
+    overflow: hidden; 
+    z-index: 1; 
+    
+    /* ADD YOUR IMAGE HERE */
+    /* Ensure the image file is in the same folder and replace 'store-bg.jpg' */
+    background: url('store_im.jpg') center center / cover no-repeat;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- FROSTED GLASS TEXT BOX --- */
+.hero-content { 
+    position: relative; 
+    z-index: 2; 
+    display: inline-block; /* Makes the box wrap around the text */
+    
+    /* Glass Effect Magic */
+    background: rgba(255, 255, 255, 0.85); /* White with 85% opacity */
+    backdrop-filter: blur(12px); /* Blurs the photo directly behind the text */
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* Box Styling */
+    padding: 40px 60px; 
+    border-radius: 25px; 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); 
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    max-width: 750px;
+    margin: 0 auto; /* Centers the box horizontally */
+}
+
+/* Text styles inside the new box */
+.hero-section h2 { 
+    font-size: 3.5em; 
+    margin: 0 0 10px; 
+    color: #111; 
+    font-weight: 800; 
+    letter-spacing: -1px; 
+}
+
+.hero-section p { 
+    color: #333; 
+    font-size: 1.25em; 
+    margin: 0; 
+    line-height: 1.6; 
+    font-weight: 500;
+}
+
+/* Responsive adjustments for mobile phones */
+@media (max-width: 600px) {
+    .hero-section { padding: 80px 15px; }
+    .hero-content { padding: 25px 20px; border-radius: 15px; }
+    .hero-section h2 { font-size: 2.2em; }
+    .hero-section p { font-size: 1.05em; }
+}
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, 40px) scale(1.05); }
+            100% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+        .hero-section h2 { font-size: 3.2em; margin: 0 0 15px; color: #111; font-weight: 800; letter-spacing: -1px; }
+        .hero-section p { color: #444; font-size: 1.2em; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6; font-weight: 500;}
+
+        /* --- SEARCH & FILTERS --- */
+        .search-container { display: flex; justify-content: center; margin-bottom: 25px; padding: 0 20px; position: relative; z-index: 2;}
+        #search-bar { 
+            width: 100%; max-width: 600px; padding: 15px 25px; font-size: 1.1em; 
+            border: 1px solid #eee; border-radius: 40px; outline: none; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03); font-family: 'Poppins', sans-serif; transition: all 0.3s ease;
+        }
+        #search-bar:focus { box-shadow: 0 8px 25px rgba(0,0,0,0.08); border-color: #ddd; }
+        
+        .filter-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 30px; padding: 0 20px; position: relative; z-index: 2;}
+        .filter-btn { 
+            padding: 10px 25px; background-color: white; border: none; color: #555; 
+            border-radius: 30px; cursor: pointer; font-size: 1em; font-weight: 600; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04); transition: all 0.3s ease; font-family: 'Poppins', sans-serif;
+        }
+        .filter-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.08); color: #1e3c72; }
+        .filter-btn.active { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; }
+
+        #glassware-sub-filters { display: none; margin-bottom: 40px; background: rgba(240, 242, 245, 0.5); padding: 15px; border-radius: 20px; }
+
+        /* --- PRODUCT GRID & CARDS --- */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 35px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        .product-card { 
+            background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.04); 
+            padding: 20px; text-align: center; transition: all 0.4s ease; position: relative; 
+            animation: fadeIn 0.6s ease forwards; border: 1px solid #f0f0f0;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); border-color: transparent; }
+
+        .img-wrapper { border-radius: 15px; overflow: hidden; position: relative; margin-bottom: 15px; background: #f9f9f9; }
+        .product-image { 
+            width: 100%; height: 250px; object-fit: contain; 
+            transition: transform 0.5s ease; display: block; cursor: zoom-in; 
+            background-color: white; 
+        }
+        .product-card:hover .product-image { transform: scale(1.08); }
+        
+        .sale-badge { 
+            position: absolute; top: 10px; right: 10px; background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%); 
+            color: white; font-size: 0.8em; font-weight: 700; padding: 5px 12px; border-radius: 20px; 
+            box-shadow: 0 4px 10px rgba(255,65,108,0.3); z-index: 2; 
+        }
+
+        .product-title { font-size: 1.1em; color: #222; margin: 10px 0; height: 50px; font-weight: 600; line-height: 1.3; overflow: hidden; }
+        
+        .price-container { margin-bottom: 20px; display: flex; justify-content: center; align-items: baseline; gap: 8px; }
+        .selling-price { font-size: 1.6em; color: #1e3c72; font-weight: 700; }
+        .mrp-price { text-decoration: line-through; color: #aaa; font-size: 0.95em; }
+
+        .action-area { height: 50px; margin-top: auto; }
+        .buy-button { 
+            background: linear-gradient(to right, #ff416c, #ff4b2b); color: white; border: none; padding: 12px 20px; border-radius: 25px; 
+            cursor: pointer; width: 100%; font-size: 1.1em; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(255,75,43,0.3); font-family: 'Poppins', sans-serif;
+        }
+        .buy-button:hover { transform: scale(1.03); box-shadow: 0 8px 20px rgba(255,75,43,0.4); }
+        
+        .main-qty-controls { display: flex; justify-content: space-between; align-items: center; background-color: #f0f2f5; padding: 5px; border-radius: 30px; height: 100%; box-sizing: border-box; }
+        .main-qty-controls .qty-btn { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 1.2em; cursor: pointer; transition: 0.2s; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(30,60,114,0.2); }
+        .main-qty-controls .qty-btn:hover { transform: scale(1.1); }
+        .qty-number { font-size: 1.3em; font-weight: 700; width: 30px; text-align: center; color: #333; }
+
+        /* --- SIDEBAR & MODALS --- */
+        .cart-sidebar { position: fixed; top: 0; right: -400px; width: 380px; height: 100%; background-color: white; box-shadow: -10px 0 30px rgba(0,0,0,0.1); transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 1000; display: flex; flex-direction: column; }
+        .cart-sidebar.open { right: 0; }
+        .cart-header { padding: 25px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; display: flex; justify-content: space-between; align-items: center; }
+        .cart-header h2 { margin: 0; font-size: 1.3em; font-weight: 600;}
+        .close-cart { background: none; border: none; color: white; font-size: 1.8em; cursor: pointer; transition: 0.2s; }
+        .close-cart:hover { transform: rotate(90deg); }
+        
+        .cart-items-container { padding: 20px; flex-grow: 1; overflow-y: auto; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding: 15px 0; }
+        .cart-item-title { font-size: 0.95em; color: #444; margin-bottom: 5px; font-weight: 600; line-height: 1.3; }
+        .cart-item-price { font-weight: 700; color: #1e3c72; font-size: 1.1em;}
+        
+        .sidebar-qty-controls { display: flex; align-items: center; gap: 10px; background-color: #f8f9fa; padding: 6px 12px; border-radius: 20px; }
+        .sidebar-qty-controls .qty-btn { background-color: white; border: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-weight: bold; display: flex; justify-content: center; align-items: center; color: #1e3c72; }
+        .sidebar-qty-controls .qty-btn:hover { background: #1e3c72; color: white;}
+        
+        .cart-footer { padding: 25px; background-color: white; border-top: 1px solid #eee; text-align: right; box-shadow: 0 -5px 15px rgba(0,0,0,0.03); }
+        .cart-total { font-size: 1.3em; color: #666; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;}
+        .cart-total span { font-size: 1.3em; font-weight: 700; color: #1e3c72;}
+        .checkout-btn { background: #28a745; color: white; border: none; padding: 16px; width: 100%; font-size: 1.2em; border-radius: 30px; cursor: pointer; font-weight: 700; font-family: 'Poppins', sans-serif; box-shadow: 0 5px 15px rgba(40,167,69,0.3); transition: 0.3s; }
+        .checkout-btn:hover { background: #218838; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(40,167,69,0.4); }
+
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); backdrop-filter: blur(5px); display: none; justify-content: center; align-items: center; z-index: 2000; overflow-y: auto; padding: 20px 0; }
+        .payment-modal { background-color: white; padding: 35px; border-radius: 20px; width: 90%; max-width: 420px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); position: relative; margin: auto; animation: popIn 0.3s ease forwards;}
+        .close-modal { position: absolute; top: 20px; right: 20px; font-size: 1.8em; cursor: pointer; color: #aaa; border: none; background: none; transition: 0.2s;}
+        .close-modal:hover { color: #333; transform: rotate(90deg); }
+        .modal-title { margin-top: 0; color: #1e3c72; text-align: center; margin-bottom: 25px; font-weight: 700; font-size: 1.5em; }
+        
+        .qr-section { text-align: center; display: none; padding: 20px; border: 2px dashed #28a745; border-radius: 15px; background-color: #f8fff9; }
+        .qr-image { width: 220px; height: 220px; object-fit: contain; margin: 15px auto; display: block; border-radius: 10px; }
+        .upi-direct-btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px; text-decoration: none; display: block; border-radius: 30px; margin-top: 15px; font-weight: 700; box-shadow: 0 5px 15px rgba(118,75,162,0.3); transition: 0.3s;}
+        .upi-direct-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(118,75,162,0.4);}
+        
+        .input-group { margin-bottom: 20px; text-align: left; }
+        .input-group label { display: block; margin-bottom: 8px; color: #444; font-weight: 600; font-size: 0.95em; }
+        .input-group input, .input-group textarea { width: 100%; padding: 14px; border: 2px solid #eee; border-radius: 10px; box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: 0.3s; font-size: 1em; background: #fcfcfc;}
+        .input-group input:focus, .input-group textarea:focus { border-color: #1e3c72; outline: none; background: white;}
+        
+        .action-btn { background: #1e3c72; color: white; border: none; padding: 16px; width: 100%; font-size: 1.1em; border-radius: 30px; cursor: pointer; font-weight: 700; margin-top: 10px; transition: 0.3s; font-family: 'Poppins', sans-serif; box-shadow: 0 5px 15px rgba(30,60,114,0.2);}
+        .action-btn:hover { background: #2a5298; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(30,60,114,0.3); }
+        .confirm-btn { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); box-shadow: 0 5px 15px rgba(56,239,125,0.3);}
+        .confirm-btn:hover { background: linear-gradient(135deg, #0f857a 0%, #31d26d 100%); }
+        
+        .upload-section { background-color: #f0f2f5; padding: 20px; border-radius: 12px; margin: 25px 0; text-align: left; border: 1px solid #e1e4e8;}
+        .upload-section label { display: block; font-weight: 600; margin-bottom: 12px; color: #333; }
+        .upload-input { width: 100%; background: white; padding: 10px; border: 1px dashed #ccc; border-radius: 8px; font-family: 'Poppins', sans-serif;}
+
+        /* --- STRICT LIGHTBOX RESET --- */
+        .image-lightbox {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px);
+            display: none; visibility: hidden; pointer-events: none;
+            justify-content: center; align-items: center; z-index: 9999;
+        }
+        .image-lightbox.show { display: flex; visibility: visible; pointer-events: auto; }
+        .lightbox-img { max-width: 85%; max-height: 85%; object-fit: contain; border-radius: 12px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes popIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        
+        @media (max-width: 600px) {
+            .store-header { padding: 15px 20px; }
+            .logo-img { max-height: 35px; }
+            .cart-sidebar { width: 100%; right: -100%; }
+            .hero-section { padding: 60px 15px 40px; }
+            .hero-section h2 { font-size: 2.2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="store-header">
+        <a href="#" class="logo-link">
+            <img src="brand magic logo.jpg" alt="Brand Magic Logo" class="logo-img">
+        </a>
+        <div class="cart-status" id="open-cart-btn">
+            🛍️ Cart <span class="cart-badge" id="cart-count">0</span>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h2>Brand Magic</h2>
+            <p>A Multi Brand Store for Kitchenware, Glassware, Steel Utensils, Plastic And Gift Items.</p>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="🔍 Search for bottles, bowls, pots, shot glasses...">
+    </div>
+    
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All Items</button>
+        <button class="filter-btn" data-filter="glassware" id="glass-main-btn">🥃 Glassware</button>
+        <button class="filter-btn" data-filter="steel">🥘 Steel Utensils</button>
+    </div>
+
+    <div class="filter-container" id="glassware-sub-filters">
+        <button class="filter-btn" data-subfilter="short">Short Glass</button>
+        <button class="filter-btn" data-subfilter="juice">Juice Glass</button>
+        <button class="filter-btn" data-subfilter="whiskey">Whiskey Glass</button>
+        <button class="filter-btn" data-subfilter="wine">Wine Glass</button>
+        <button class="filter-btn" data-subfilter="water">Water Glass</button>
+        <button class="filter-btn" data-subfilter="borosilicate">Borosilicate Range</button>
+    </div>
+
+    <div class="product-grid" id="product-grid">
+        
+        <div class="product-card" data-category="short">
+            <div class="img-wrapper">
+                <span class="sale-badge">53% OFF</span>
+                <img src="short glass.jpg" alt="Vogue Shot Glass" class="product-image">
+            </div>
+            <h2 class="product-title">SCOGO Vogue Shot Glass (Set of 6) (50mL)</h2>
+            <div class="price-container"><span class="selling-price">₹115</span><span class="mrp-price">₹245</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="product-card" data-category="short">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="bella short glass.jpg" alt="Bella Short Glass" class="product-image">
+            </div>
+            <h2 class="product-title">Bella Short Glass(set of 6) (60mL)</h2>
+            <div class="price-container"><span class="selling-price">₹145</span><span class="mrp-price">₹345</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="short">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="paris premium short glass.png" alt="Paris Premium Short Glass" class="product-image">
+            </div>
+            <h2 class="product-title">Paris Premium Short Glass (Set of 6)(75mL)</h2>
+            <div class="price-container"><span class="selling-price">₹185</span><span class="mrp-price">₹395</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="short">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="Dubai premium short glass.jpg" alt="Dubai premium short glass" class="product-image">
+            </div>
+            <h2 class="product-title">Dubai premium short glass (Set of 6) (75mL)</h2>
+            <div class="price-container"><span class="selling-price">₹185</span><span class="mrp-price">₹395</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="istanbul juice glass.jpg" alt="istanbul juice glass" class="product-image">
+            </div>
+            <h2 class="product-title">Istanbul Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹260</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="bangkok juice glass.jpg" alt="bangkok juice glass" class="product-image">
+            </div>
+            <h2 class="product-title">Bangkok Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹260</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="morocco juice glass.jpg" alt="morocco juice glass" class="product-image">
+            </div>
+            <h2 class="product-title">Morocco Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹260</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="tokyo juice glass.jpg" alt="tokyo juice glass" class="product-image">
+            </div>
+            <h2 class="product-title">Tokyo Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹260</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="oslo juice glass.jpg" alt="oslo juice glass" class="product-image">
+            </div>
+            <h2 class="product-title">Oslo Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹260</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="baku juice glass.jpg" alt="baku juice glass" class="product-image">
+            </div>
+            <h2 class="product-title">Baku Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹260</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="opara juice glass.jpg" alt="Opara Juice Glass" class="product-image">
+            </div>
+            <h2 class="product-title">Opara Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹245</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="paris juice glass.png" alt="Paris Juice Glass" class="product-image">
+            </div>
+            <h2 class="product-title">Paris Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹245</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="lisbon juice glass.png" alt="Lisbon Juice Glass" class="product-image">
+            </div>
+            <h2 class="product-title">Lisbon Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹260</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="dubai juice glass.png" alt="Dubai Juice Glass" class="product-image">
+            </div>
+            <h2 class="product-title">Dubai Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹245</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="cairo juice glass.png" alt="Cairo Juice Glass" class="product-image">
+            </div>
+            <h2 class="product-title">Cairo Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹260</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="diamond juice glass.png" alt="Diamond Juice Glass" class="product-image">
+            </div>
+            <h2 class="product-title">Diamond Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹245</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="printed decor juice glass.png" alt="Printed Decor Juice Glass" class="product-image">
+            </div>
+            <h2 class="product-title">Printed Decor Juice Glass (Set of 6) (310mL)</h2>
+            <div class="price-container"><span class="selling-price">₹275</span><span class="mrp-price">₹695</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="pisa juice glass.png" alt="Pisa Juice Glass" class="product-image">
+            </div>
+            <h2 class="product-title">Pisa Juice Glass (Set of 6) (270mL)</h2>
+            <div class="price-container"><span class="selling-price">₹250</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="aria juice glass.png" alt="Aria Juice Glass" class="product-image">
+            </div>
+            <h2 class="product-title">Aria Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹260</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="juice">
+            <div class="img-wrapper">
+                <span class="sale-badge">50% OFF</span>
+                <img src="oasis juice glass.png" alt="Oasis Juice Glass" class="product-image">
+            </div>
+            <h2 class="product-title">Oasis Juice Glass (Set of 6) (230mL)</h2>
+            <div class="price-container"><span class="selling-price">₹260</span><span class="mrp-price">₹645</span></div>
+            <div class="action-area">
+                <button class="buy-button">Add to Cart</button>
+                <div class="main-qty-controls" style="display: none;">
+                    <button class="qty-btn minus-btn">-</button><span class="qty-number">1</span><button class="qty-btn plus-btn">+</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>🛍️ Your Cart</h2>
+            <button class="close-cart" id="close-cart-btn">✖</button>
+        </div>
+        <div class="cart-items-container" id="cart-items-container">
+            <p style="text-align: center; color: #888; margin-top: 50px;">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">Total: <span id="cart-total-price">₹0</span></div>
+            <button class="checkout-btn" id="checkout-btn">Proceed to Checkout ➔</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="payment-modal">
+        <div class="payment-modal">
+            <button class="close-modal" id="close-modal-btn">✖</button>
+            <h2 class="modal-title">Secure Checkout</h2>
+            
+            <div id="details-section">
+                <div class="input-group">
+                    <label>👤 Full Name</label>
+                    <input type="text" id="customer-name" placeholder="Enter your name">
+                </div>
+                <div class="input-group">
+                    <label>📞 Phone Number (WhatsApp)</label>
+                    <input type="tel" id="customer-phone" placeholder="Enter 10-digit number">
+                </div>
+                <div class="input-group">
+                    <label>📍 Delivery Address</label>
+                    <textarea id="customer-address" rows="3" placeholder="Enter full address"></textarea>
+                </div>
+                <button class="action-btn" id="generate-bill-btn">Generate Bill & Pay</button>
+            </div>
+
+            <div class="qr-section" id="qr-section">
+                <h3 style="margin-top: 0; color: #e44d26;">Total to Pay: <span id="final-bill-amount">₹0</span></h3>
+                <p style="font-size: 0.9em; color: #555;">Scan to pay securely via any UPI App</p>
+                <img src="Qr_scanner.jpg" alt="Store QR Code" class="qr-image">
+                <a href="#" id="upi-link" class="upi-direct-btn">📲 Pay Directly via Mobile App</a>
+                <div class="upload-section">
+                    <label for="payment-screenshot">📸 Upload Payment Screenshot:</label>
+                    <input type="file" id="payment-screenshot" class="upload-input" accept="image/*">
+                </div>
+                <button class="action-btn confirm-btn" id="confirm-payment-btn">Complete My Order ✔</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-lightbox" id="image-lightbox">
+        <img src="" alt="Full Size Product" class="lightbox-img" id="lightbox-img">
+    </div>
+
+    <script>
+        let cart = []; 
+        let cartTotal = 0; 
+        const myUPI_ID = "yourname@bankname"; 
+
+        const cartBadge = document.getElementById('cart-count');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const openCartBtn = document.getElementById('open-cart-btn');
+        const closeCartBtn = document.getElementById('close-cart-btn');
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const cartTotalPrice = document.getElementById('cart-total-price');
+        
+        const checkoutBtn = document.getElementById('checkout-btn');
+        const paymentModal = document.getElementById('payment-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const detailsSection = document.getElementById('details-section');
+        const qrSection = document.getElementById('qr-section');
+        const generateBillBtn = document.getElementById('generate-bill-btn');
+        const confirmPaymentBtn = document.getElementById('confirm-payment-btn');
+        const finalBillAmount = document.getElementById('final-bill-amount');
+        const upiLink = document.getElementById('upi-link');
+        const screenshotInput = document.getElementById('payment-screenshot');
+
+        openCartBtn.addEventListener('click', () => cartSidebar.classList.add('open'));
+        closeCartBtn.addEventListener('click', () => cartSidebar.classList.remove('open'));
+
+        function updateCart(itemName, itemPrice, quantityChange) {
+            let existingItem = cart.find(item => item.name === itemName);
+            if (existingItem) {
+                existingItem.quantity += quantityChange;
+                if (existingItem.quantity <= 0) {
+                    cart = cart.filter(item => item.name !== itemName);
+                }
+            } else if (quantityChange > 0) {
+                cart.push({ name: itemName, price: itemPrice, quantity: quantityChange });
+            }
+            redrawEntireUI();
+        }
+
+        function redrawEntireUI() {
+            let totalItemsInCart = 0;
+            cartTotal = 0;
+            cartItemsContainer.innerHTML = ''; 
+
+            if(cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p style="text-align: center; color: #888; margin-top: 50px;">Your cart is empty.</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    cartTotal += itemTotal; 
+                    totalItemsInCart += item.quantity;
+
+                    cartItemsContainer.innerHTML += `
+                        <div class="cart-item">
+                            <div style="flex-grow: 1; padding-right: 10px;">
+                                <div class="cart-item-title">${item.name}</div>
+                                <div class="cart-item-price">₹${itemTotal}</div>
+                            </div>
+                            <div class="sidebar-qty-controls">
+                                <button class="qty-btn" onclick="sidebarChangeQty(${index}, -1)">-</button>
+                                <span style="font-weight:bold; width: 15px; text-align:center;">${item.quantity}</span>
+                                <button class="qty-btn" onclick="sidebarChangeQty(${index}, 1)">+</button>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            
+            cartBadge.innerText = totalItemsInCart; 
+            cartTotalPrice.innerText = `₹${cartTotal}`;
+
+            document.querySelectorAll('.product-card').forEach(card => {
+                const title = card.querySelector('.product-title').innerText;
+                const buyBtn = card.querySelector('.buy-button');
+                const qtyControls = card.querySelector('.main-qty-controls');
+                const qtyNumber = card.querySelector('.qty-number');
+                
+                const itemInCart = cart.find(item => item.name === title);
+                
+                if (itemInCart) {
+                    buyBtn.style.display = 'none';
+                    qtyControls.style.display = 'flex';
+                    qtyNumber.innerText = itemInCart.quantity;
+                } else {
+                    buyBtn.style.display = 'block';
+                    qtyControls.style.display = 'none';
+                }
+            });
+        }
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            const title = card.querySelector('.product-title').innerText;
+            const price = parseInt(card.querySelector('.selling-price').innerText.replace('₹', ''));
+            
+            card.querySelector('.buy-button').addEventListener('click', () => updateCart(title, price, 1));
+            card.querySelector('.plus-btn').addEventListener('click', () => updateCart(title, price, 1));
+            card.querySelector('.minus-btn').addEventListener('click', () => updateCart(title, price, -1));
+        });
+
+        window.sidebarChangeQty = function(index, change) {
+            const item = cart[index];
+            if (item) { updateCart(item.name, item.price, change); }
+        };
+
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) { alert("Please add some items to your cart first!"); return; }
+            cartSidebar.classList.remove('open');
+            detailsSection.style.display = 'block';
+            qrSection.style.display = 'none';
+            screenshotInput.value = ''; 
+            paymentModal.style.display = 'flex';  
+        });
+
+        closeModalBtn.addEventListener('click', () => paymentModal.style.display = 'none');
+
+        generateBillBtn.addEventListener('click', () => {
+            const name = document.getElementById('customer-name').value;
+            const phone = document.getElementById('customer-phone').value;
+            const address = document.getElementById('customer-address').value;
+            const myUPI_ID = "alankritadube@okicici";
+            if (name === "" || phone === "" || address === "") { alert("Please fill in all your delivery details."); return; }
+            detailsSection.style.display = 'none';
+            qrSection.style.display = 'block';
+            finalBillAmount.innerText = `₹${cartTotal}`;
+            const upiURL = `upi://pay?pa=${myUPI_ID}&pn=Kitchenware+Store&am=${cartTotal}&cu=INR`;
+            upiLink.setAttribute("href", upiURL);
+        });
+
+        confirmPaymentBtn.addEventListener('click', () => {
+            if (screenshotInput.files.length === 0) {
+                alert("⚠️ Please upload the screenshot of your payment to continue."); return; 
+            }
+            alert("✅ Order Submitted Successfully!\n\nWe have received your payment screenshot. We will verify the payment and ship your items shortly.");
+            cart = [];
+            redrawEntireUI(); 
+            document.getElementById('customer-name').value = '';
+            document.getElementById('customer-phone').value = '';
+            document.getElementById('customer-address').value = '';
+            paymentModal.style.display = 'none';
+        });
+
+        document.getElementById('search-bar').addEventListener('keyup', (e) => { 
+            const searchString = e.target.value.toLowerCase(); 
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active')); 
+            document.querySelector('[data-filter="all"]').classList.add('active'); 
+            document.getElementById('glassware-sub-filters').style.display = 'none';
+            
+            document.querySelectorAll('.product-card').forEach(card => { 
+                card.style.display = card.querySelector('.product-title').innerText.toLowerCase().includes(searchString) ? 'block' : 'none'; 
+            }); 
+        });
+
+        const mainFilterBtns = document.querySelectorAll('.filter-btn[data-filter]');
+        const subFilterBtns = document.querySelectorAll('.filter-btn[data-subfilter]');
+        const glassSubMenu = document.getElementById('glassware-sub-filters');
+        const cards = document.querySelectorAll('.product-card');
+
+        mainFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filterValue = btn.getAttribute('data-filter');
+                
+                mainFilterBtns.forEach(b => b.classList.remove('active'));
+                subFilterBtns.forEach(sb => sb.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('search-bar').value = ''; 
+
+                if (filterValue === 'glassware') {
+                    glassSubMenu.style.display = 'flex';
+                    cards.forEach(card => {
+                        const cat = card.getAttribute('data-category');
+                        const isGlass = ['short', 'juice', 'whiskey', 'wine', 'water', 'borosilicate'].includes(cat);
+                        card.style.display = isGlass ? 'block' : 'none';
+                    });
+                } else {
+                    glassSubMenu.style.display = 'none';
+                    cards.forEach(card => {
+                        const cat = card.getAttribute('data-category');
+                        card.style.display = (filterValue === 'all' || cat === filterValue) ? 'block' : 'none';
+                    });
+                }
+            });
+        });
+
+        subFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const subValue = btn.getAttribute('data-subfilter');
+                subFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                cards.forEach(card => {
+                    card.style.display = (card.getAttribute('data-category') === subValue) ? 'block' : 'none';
+                });
+            });
+        });
+
+        const imageLightbox = document.getElementById('image-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        document.getElementById('product-grid').addEventListener('click', (e) => {
+            if (e.target.classList.contains('product-image')) {
+                lightboxImg.src = e.target.src;
+                imageLightbox.style.display = 'flex';
+                setTimeout(() => imageLightbox.classList.add('show'), 10);
+            }
+        });
+
+        function hideZoom() {
+            imageLightbox.classList.remove('show');
+            setTimeout(() => {
+                imageLightbox.style.display = 'none';
+                lightboxImg.src = ''; 
+            }, 300);
+        }
+
+        imageLightbox.addEventListener('click', hideZoom);
+    </script>
+</body>
+</html>
